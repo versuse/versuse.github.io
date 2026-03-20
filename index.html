@@ -137,7 +137,7 @@ section { padding: 80px 40px; }
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img src="profile.jpeg" alt="Vishnu C" class="hero-photo"/>
+      <img src="vishnu.jpeg" alt="Vishnu C" class="hero-photo"/>
     </div>
   </div>
   <div class="hero-stats">
@@ -344,7 +344,7 @@ async function submitForm() {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ access_key: 'YOUR_WEB3FORMS_KEY_HERE', subject: 'New message from portfolio — versuse.github.io', name, email, message })
+      body: JSON.stringify({ access_key: '28b3c410-56ce-444a-8048-7be8d35eb681E', subject: 'New message from portfolio — versuse.github.io', name, email, message })
     });
     const result = await res.json();
     if (result.success) {
