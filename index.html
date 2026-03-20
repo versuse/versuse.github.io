@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vishnu C — Product & Business Analyst</title>
+<meta name="description" content="Portfolio of Vishnu C — Product and Business Analyst based in Chennai / Bangalore."/>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* ── HOME-ONLY STYLES ── */
+.hero {
+  max-width: 1000px; margin: 0 auto;
+  padding: 140px 40px 100px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  letter-spacing: 0.04em; margin-bottom: 28px;
+}
+.hero-eyebrow::before {
+  content: ''; width: 7px; height: 7px;
+  border-radius: 50%; background: var(--orange);
+  animation: blink 2s infinite;
+}
+.hero h1 {
+  font-family: 'Gambetta', serif;
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 400; line-height: 1.0;
+  letter-spacing: -0.03em; color: var(--ink); margin-bottom: 12px;
+}
+.hero h1 em { font-style: italic; font-weight: 400; }
+.hero h1 span { font-style: italic; color: var(--muted); font-family: 'Gambetta', serif; }
+.hero-sub {
+  font-size: 18px; color: var(--muted);
+  max-width: 520px; line-height: 1.6;
+  font-weight: 400; margin: 24px 0 40px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-photo-wrap { display: flex; justify-content: flex-end; }
+.hero-photo {
+  width: 260px; height: 300px;
+  object-fit: cover; object-position: top center;
+  border-radius: 20px; border: 1px solid var(--border);
+  filter: grayscale(8%); animation: fadeUp 0.5s 0.2s ease both;
+}
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 60px;
+  padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.stat { display: flex; flex-direction: column; gap: 2px; }
+.stat-num {
+  font-family: 'Gambetta', serif; font-size: 32px;
+  font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -0.02em;
+}
+.stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+/* ABOUT */
+#about { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+#about .section-inner { max-width: 1000px; margin: 0 auto; }
+section { padding: 80px 40px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-left h2 {
+  font-family: 'Gambetta', serif; font-size: 38px;
+  font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.about-left h2 em { font-style: italic; color: var(--muted); }
+.about-left p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.about-left p strong { color: var(--ink); font-weight: 700; }
+.about-right { display: flex; flex-direction: column; gap: 12px; }
+.skill-group { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; }
+.skill-group-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag { font-size: 12px; font-weight: 600; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; color: var(--ink); }
+
+/* EXPERIENCE */
+#experience { background: var(--bg); }
+#experience .section-inner { max-width: 1000px; margin: 0 auto; }
+.exp-list { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.exp-item { background: var(--white); padding: 24px 28px; display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
+.exp-company { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.exp-date { font-size: 12px; color: var(--muted); }
+.exp-role { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.exp-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.exp-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+
+/* CONTACT */
+#contact { background: var(--ink); color: var(--white); }
+#contact .section-inner { max-width: 1000px; margin: 0 auto; }
+#contact .section-eyebrow { justify-content: center; }
+#contact .eyebrow-line { background: rgba(255,255,255,0.3); }
+#contact .eyebrow-text { color: rgba(255,255,255,0.4); }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 40px; }
+.contact-h { font-family: 'Gambetta', serif; font-size: clamp(32px, 4vw, 48px); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+.contact-h em { font-style: italic; color: rgba(255,255,255,0.5); }
+.contact-sub { font-size: 15px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.6; }
+.contact-direct { display: flex; flex-direction: column; gap: 10px; }
+.contact-direct-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+.contact-direct-item:hover { color: var(--white); }
+.contact-direct-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.contact-form-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 30px; }
+.form-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; color: var(--white); }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.form-group input, .form-group textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; font-family: 'Cabinet Grotesk', sans-serif; font-size: 14px; color: var(--white); outline: none; transition: border-color 0.2s; resize: none; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus, .form-group textarea:focus { border-color: rgba(255,255,255,0.35); }
+.form-submit { width: 100%; background: var(--white); color: var(--ink); font-family: 'Cabinet Grotesk', sans-serif; font-size: 14px; font-weight: 700; padding: 13px 24px; border-radius: 24px; border: none; cursor: pointer; transition: opacity 0.2s; margin-top: 4px; }
+.form-submit:hover { opacity: 0.88; }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-success { display: none; text-align: center; padding: 20px; font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+.form-success-icon { font-size: 32px; margin-bottom: 10px; }
+.footer-bar { max-width: 1000px; margin: 60px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { padding: 120px 20px 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-photo-wrap { justify-content: flex-start; }
+  .hero-photo { width: 140px; height: 160px; }
+  .hero-stats { gap: 28px; }
+  section { padding: 60px 20px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .exp-item { grid-template-columns: 1fr; gap: 8px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bar { flex-direction: column; gap: 8px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vishnu C</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">Open to work · Chennai / Bangalore</div>
+      <h1>Vishnu C<br/><em>Product &amp;</em><br/><span>Business Analyst</span></h1>
+      <p class="hero-sub">Engineer turned analyst. I turn messy business problems into clear data-backed decisions. 2 years at Tata Elxsi. Currently transitioning into product-first companies.</p>
+      <div class="hero-actions">
+        <a href="case-studies.html" class="btn-primary">View case studies →</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="profile.jpeg" alt="Vishnu C" class="hero-photo"/>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years of experience</span></div>
+    <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Requirement documents</span></div>
+    <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Cross-functional stakeholders</span></div>
+    <div class="stat"><span class="stat-num">3</span><span class="stat-label">Parallel initiatives delivered</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">About me</span></div>
+    <div class="about-grid">
+      <div class="about-left">
+        <h2>Engineer who thinks<br/><em>like a product person</em></h2>
+        <p>I spent 2 years at Tata Elxsi working on automotive perception systems — writing requirements that bridged engineering and business, evaluating AI/ML models with Python, and translating complex technical findings to non-technical stakeholders across 5+ cross-functional teams.</p>
+        <p>I <strong>diagnosed and fixed a broken delivery workflow</strong> that had caused repeated misalignment across three parallel initiatives. I think in metrics. I will not make a decision without data.</p>
+        <p>I am transitioning into Product Analyst and Business Analyst roles at product-first companies — where data, product thinking, and communication sit at the same table.</p>
+      </div>
+      <div class="about-right">
+        <div class="skill-group">
+          <div class="skill-group-label">Analysis</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Analysis</span>
+            <span class="skill-tag">Business Analysis</span>
+            <span class="skill-tag">Funnel Analysis</span>
+            <span class="skill-tag">KPI Definition</span>
+            <span class="skill-tag">Root Cause Analysis</span>
+            <span class="skill-tag">A/B Testing</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Data & Tools</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Excel</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Jira</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Product</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PRD Writing</span>
+            <span class="skill-tag">Stakeholder Communication</span>
+            <span class="skill-tag">Trade-off Analysis</span>
+            <span class="skill-tag">Release Planning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Experience & Education</span></div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div>
+          <div class="exp-company">Tata Elxsi</div>
+          <div class="exp-date">Mar 2024 — Present</div>
+        </div>
+        <div>
+          <div class="exp-role">Engineer — Business / Product Analyst</div>
+          <div class="exp-desc">Automotive & Computer Vision · Self-driving perception systems. Collaborated with 5+ cross-functional stakeholders, authored requirement documents bridging technical and business needs, evaluated AI/ML models using Python, and diagnosed a broken delivery workflow causing misalignment across 3 parallel initiatives.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Python</span>
+            <span class="exp-tag">Requirements analysis</span>
+            <span class="exp-tag">Stakeholder communication</span>
+            <span class="exp-tag">AI/ML evaluation</span>
+            <span class="exp-tag">Process improvement</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div>
+          <div class="exp-company">RGCET</div>
+          <div class="exp-date">2019 — 2023</div>
+        </div>
+        <div>
+          <div class="exp-role">B.Tech — Computer Science & Engineering</div>
+          <div class="exp-desc">Rajiv Gandhi College of Engineering and Technology. Foundation in computer science, data structures, algorithms, and software engineering principles.</div>
+          <div class="exp-tags">
+            <span class="exp-tag">Computer Science</span>
+            <span class="exp-tag">Google BA Certificate</span>
+            <span class="exp-tag">Google PM Certificate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Get in touch</span></div>
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-h">Let's talk about <em>product, data,</em> and what I can bring to your team</h2>
+        <p class="contact-sub">Open to Product Analyst and Business Analyst roles in Bangalore and Chennai. Always happy to connect with PMs, BAs, and recruiters.</p>
+        <div class="contact-direct">
+          <a href="mailto:vishnuversuse@gmail.com" class="contact-direct-item">
+            <span class="contact-direct-icon">✉</span>
+            vishnuversuse@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/vishnucattavarayen" target="_blank" class="contact-direct-item">
+            <span class="contact-direct-icon">in</span>
+            linkedin.com/in/vishnucattavarayen
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-title">Send me a message</div>
+        <form id="contactForm" onsubmit="return false">
+          <div class="form-group">
+            <label>Your name</label>
+            <input type="text" name="name" placeholder="Priya Sharma" required/>
+          </div>
+          <div class="form-group">
+            <label>Your email</label>
+            <input type="email" name="email" placeholder="priya@company.com" required/>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" rows="4" placeholder="Hi Vishnu, I came across your case study and wanted to connect..." required></textarea>
+          </div>
+          <button type="button" class="form-submit" id="submitBtn" onclick="submitForm()">Send message →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✓</div>
+          Message sent! I will get back to you within 24 hours.
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>Vishnu C — Product & Business Analyst</span>
+      <span>Chennai / Bangalore · Open to relocation</span>
+    </div>
+  </div>
+</section>
+
+<script>
+async function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const name = document.querySelector('#contactForm [name="name"]').value.trim();
+  const email = document.querySelector('#contactForm [name="email"]').value.trim();
+  const message = document.querySelector('#contactForm [name="message"]').value.trim();
+  if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'YOUR_WEB3FORMS_KEY_HERE',
+        subject: 'New message from portfolio — versuse.github.io',
+        name, email, message
+      })
+    });
+    const result = await res.json();
+    if (result.success) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.disabled = false; btn.textContent = 'Send message →';
+      alert('Something went wrong. Email me at vishnuversuse@gmail.com');
+    }
+  } catch {
+    btn.disabled = false; btn.textContent = 'Send message →';
+    alert('Something went wrong. Email me at vishnuversuse@gmail.com');
+  }
+}
+</script>
+</body>
+</html>

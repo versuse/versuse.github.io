@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Case Studies — Vishnu C</title>
+<meta name="description" content="Product and business analysis case studies by Vishnu C."/>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+.page-hero {
+  max-width: 1000px; margin: 0 auto;
+  padding: 120px 40px 60px;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero h1 {
+  font-family: 'Gambetta', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 400; line-height: 1.1;
+  letter-spacing: -0.02em; margin-bottom: 12px;
+  animation: fadeUp 0.5s ease both;
+}
+.page-hero h1 em { font-style: italic; color: var(--muted); }
+.page-hero p {
+  font-size: 16px; color: var(--muted);
+  max-width: 520px; line-height: 1.6;
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+.cases-grid {
+  max-width: 1000px; margin: 0 auto;
+  padding: 60px 40px 100px;
+  display: grid; gap: 16px;
+}
+
+/* ── CASE CARD ── */
+.case-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px; align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px 32px;
+  text-decoration: none; color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.case-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.case-card.featured { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.case-card.coming { border-style: dashed; opacity: 0.55; pointer-events: none; }
+
+.card-left {}
+.card-tag {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--muted); margin-bottom: 10px;
+}
+.case-card.featured .card-tag { color: rgba(255,255,255,0.45); }
+.card-title {
+  font-family: 'Gambetta', serif;
+  font-size: 22px; font-weight: 400;
+  line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px;
+}
+.case-card.featured .card-title { color: var(--white); }
+.card-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.case-card.featured .card-desc { color: rgba(255,255,255,0.6); }
+.card-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.card-pill {
+  font-size: 11px; font-weight: 600;
+  padding: 4px 10px; border-radius: 20px;
+  background: var(--surface); color: var(--muted); border: 1px solid var(--border);
+}
+.case-card.featured .card-pill { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+.case-card.coming .card-pill { background: var(--surface); color: var(--muted); }
+
+.card-right { flex-shrink: 0; }
+.card-arrow {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; transition: background 0.2s;
+}
+.case-card:hover .card-arrow { background: var(--border); }
+.case-card.featured .card-arrow { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); color: var(--white); }
+.case-card.featured:hover .card-arrow { background: rgba(255,255,255,0.22); }
+.card-coming-pill {
+  font-size: 12px; font-weight: 600; color: var(--muted);
+  background: var(--surface); border-radius: 20px;
+  padding: 6px 14px; border: 1px solid var(--border);
+}
+
+/* ADD YOUR OWN CARD — instruction box */
+.add-card {
+  border: 1.5px dashed var(--orange-border);
+  border-radius: 16px; padding: 28px 32px;
+  background: var(--orange-soft);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+}
+.add-card-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--orange); }
+.add-card-text p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.add-card-steps { font-size: 12px; color: var(--muted); line-height: 1.9; }
+.add-card-steps code { font-family: monospace; font-size: 11px; background: var(--white); padding: 1px 6px; border-radius: 4px; color: var(--ink); }
+
+@media (max-width: 768px) {
+  .page-hero { padding: 100px 20px 40px; }
+  .cases-grid { padding: 40px 20px 80px; }
+  .case-card { grid-template-columns: 1fr; gap: 16px; }
+  .add-card { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Vishnu C</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="case-studies.html" class="active">Case Studies</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Get in touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Case Studies</span></div>
+  <h1>Thinking through<br/><em>real product problems</em></h1>
+  <p>Independent case studies — diagnosing real business problems, building metrics frameworks, and designing testable interventions.</p>
+</div>
+
+<div class="cases-grid">
+
+  <!-- ── SWIGGY — FEATURED ── -->
+  <a href="case-studies/swiggy.html" class="case-card featured">
+    <div class="card-left">
+      <div class="card-tag">Featured · Consumer App · Growth · 2025</div>
+      <div class="card-title">Why Swiggy's food users never try Instamart</div>
+      <p class="card-desc">65% of Swiggy users use only one service. I diagnosed why food users are not crossing over to Instamart and designed three testable interventions — time-based surfacing, cook-it-yourself mode, and checkout add-on.</p>
+      <div class="card-pills">
+        <span class="card-pill">Cross-vertical adoption</span>
+        <span class="card-pill">Funnel analysis</span>
+        <span class="card-pill">A/B testing</span>
+        <span class="card-pill">North Star metric</span>
+        <span class="card-pill">Guardrail metrics</span>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="card-arrow">→</div>
+    </div>
+  </a>
+
+  <!-- ── ULTRAVIOLETTE ── -->
+  <a href="case-studies/ultraviolette.html" class="case-card">
+    <div class="card-left">
+      <div class="card-tag">Independent · EV · Market Analysis · 2024</div>
+      <div class="card-title">Ultraviolette EV expansion analysis</div>
+      <p class="card-desc">Structured product and market analysis evaluating Ultraviolette's potential expansion into the electric car segment — user needs, competitive landscape, brand positioning, and success metrics.</p>
+      <div class="card-pills">
+        <span class="card-pill">Market analysis</span>
+        <span class="card-pill">Competitive landscape</span>
+        <span class="card-pill">Product strategy</span>
+        <span class="card-pill">Risk assessment</span>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="card-arrow">→</div>
+    </div>
+  </a>
+
+  <!-- ── COMING SOON ── -->
+  <div class="case-card coming">
+    <div class="card-left">
+      <div class="card-tag">Coming soon · Fintech</div>
+      <div class="card-title">Next case study</div>
+      <p class="card-desc">Currently researching a fintech product analytics case study. Drop me a message if you have a suggestion.</p>
+      <div class="card-pills"><span class="card-pill">In research</span></div>
+    </div>
+    <div class="card-right">
+      <div class="card-coming-pill">Coming soon</div>
+    </div>
+  </div>
+
+  <!-- ── HOW TO ADD A NEW CASE STUDY ── -->
+  <div class="add-card">
+    <div class="add-card-text">
+      <h3>Adding a new case study?</h3>
+      <p>Takes 3 steps. No need to touch any other file.</p>
+    </div>
+    <div class="add-card-steps">
+      1. Copy <code>case-studies/swiggy.html</code> → rename it<br/>
+      2. Edit the content inside the new file<br/>
+      3. Add a new card above this box in <code>case-studies.html</code>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <a href="index.html">Vishnu C</a> · Product & Business Analyst ·
+  <a href="mailto:vishnuversuse@gmail.com">vishnuversuse@gmail.com</a> ·
+  Chennai / Bangalore
+</footer>
+
+</body>
+</html>
