@@ -7,69 +7,28 @@
 <meta name="description" content="Portfolio of Vishnu C — Product and Business Analyst based in Chennai / Bangalore."/>
 <link rel="stylesheet" href="assets/style.css"/>
 <style>
-/* ── HOME-ONLY STYLES ── */
-.hero {
-  max-width: 1000px; margin: 0 auto;
-  padding: 140px 40px 100px;
-}
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 60px; align-items: center;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 20px; padding: 5px 14px;
-  font-size: 12px; font-weight: 600; color: var(--muted);
-  letter-spacing: 0.04em; margin-bottom: 28px;
-}
-.hero-eyebrow::before {
-  content: ''; width: 7px; height: 7px;
-  border-radius: 50%; background: var(--orange);
-  animation: blink 2s infinite;
-}
-.hero h1 {
-  font-family: 'Gambetta', serif;
-  font-size: clamp(48px, 7vw, 80px);
-  font-weight: 400; line-height: 1.0;
-  letter-spacing: -0.03em; color: var(--ink); margin-bottom: 12px;
-}
+.hero { max-width: 1000px; margin: 0 auto; padding: 140px 40px 100px; }
+.hero-grid { display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: center; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; margin-bottom: 28px; }
+.hero-eyebrow::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); animation: blink 2s infinite; }
+.hero h1 { font-family: 'Gambetta', serif; font-size: clamp(48px, 7vw, 80px); font-weight: 400; line-height: 1.0; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 12px; }
 .hero h1 em { font-style: italic; font-weight: 400; }
 .hero h1 span { font-style: italic; color: var(--muted); font-family: 'Gambetta', serif; }
-.hero-sub {
-  font-size: 18px; color: var(--muted);
-  max-width: 520px; line-height: 1.6;
-  font-weight: 400; margin: 24px 0 40px;
-}
+.hero-sub { font-size: 18px; color: var(--muted); max-width: 520px; line-height: 1.6; font-weight: 400; margin: 24px 0 40px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-photo-wrap { display: flex; justify-content: flex-end; }
-.hero-photo {
-  width: 260px; height: 300px;
-  object-fit: cover; object-position: top center;
-  border-radius: 20px; border: 1px solid var(--border);
-  filter: grayscale(8%); animation: fadeUp 0.5s 0.2s ease both;
-}
-.hero-stats {
-  display: flex; gap: 40px; margin-top: 60px;
-  padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap;
-}
+.hero-photo { width: 260px; height: 300px; object-fit: cover; object-position: top center; border-radius: 20px; border: 1px solid var(--border); filter: grayscale(8%); }
+.hero-stats { display: flex; gap: 40px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); flex-wrap: wrap; }
 .stat { display: flex; flex-direction: column; gap: 2px; }
-.stat-num {
-  font-family: 'Gambetta', serif; font-size: 32px;
-  font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -0.02em;
-}
+.stat-num { font-family: 'Gambetta', serif; font-size: 32px; font-weight: 400; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
 .stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
 
-/* ABOUT */
-#about { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-#about .section-inner { max-width: 1000px; margin: 0 auto; }
 section { padding: 80px 40px; }
+.section-inner { max-width: 1000px; margin: 0 auto; }
+
+#about { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.about-left h2 {
-  font-family: 'Gambetta', serif; font-size: 38px;
-  font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px;
-}
+.about-left h2 { font-family: 'Gambetta', serif; font-size: 38px; font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; }
 .about-left h2 em { font-style: italic; color: var(--muted); }
 .about-left p { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
 .about-left p strong { color: var(--ink); font-weight: 700; }
@@ -79,9 +38,29 @@ section { padding: 80px 40px; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .skill-tag { font-size: 12px; font-weight: 600; background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; color: var(--ink); }
 
-/* EXPERIENCE */
-#experience { background: var(--bg); }
-#experience .section-inner { max-width: 1000px; margin: 0 auto; }
+#work { background: var(--bg); }
+.work-grid { display: grid; gap: 16px; }
+
+.case-card { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 32px; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; }
+.case-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.case-card.featured { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.case-card.coming { border-style: dashed; opacity: 0.55; pointer-events: none; }
+.card-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 10px; }
+.case-card.featured .card-tag { color: rgba(255,255,255,0.45); }
+.card-title { font-family: 'Gambetta', serif; font-size: 22px; font-weight: 400; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 10px; }
+.case-card.featured .card-title { color: var(--white); }
+.card-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.case-card.featured .card-desc { color: rgba(255,255,255,0.6); }
+.card-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.card-pill { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
+.case-card.featured .card-pill { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); }
+.card-arrow { width: 44px; height: 44px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: background 0.2s; }
+.case-card:hover .card-arrow { background: var(--border); }
+.case-card.featured .card-arrow { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2); color: var(--white); }
+.case-card.featured:hover .card-arrow { background: rgba(255,255,255,0.22); }
+.card-coming-pill { font-size: 12px; font-weight: 600; color: var(--muted); background: var(--surface); border-radius: 20px; padding: 6px 14px; border: 1px solid var(--border); white-space: nowrap; }
+
+#experience { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .exp-list { display: grid; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
 .exp-item { background: var(--white); padding: 24px 28px; display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: start; }
 .exp-company { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
@@ -91,9 +70,7 @@ section { padding: 80px 40px; }
 .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .exp-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
 
-/* CONTACT */
 #contact { background: var(--ink); color: var(--white); }
-#contact .section-inner { max-width: 1000px; margin: 0 auto; }
 #contact .section-eyebrow { justify-content: center; }
 #contact .eyebrow-line { background: rgba(255,255,255,0.3); }
 #contact .eyebrow-text { color: rgba(255,255,255,0.4); }
@@ -119,7 +96,6 @@ section { padding: 80px 40px; }
 .form-success-icon { font-size: 32px; margin-bottom: 10px; }
 .footer-bar { max-width: 1000px; margin: 60px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.3); }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero { padding: 120px 20px 80px; }
   .hero-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -128,6 +104,7 @@ section { padding: 80px 40px; }
   .hero-stats { gap: 28px; }
   section { padding: 60px 20px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .case-card { grid-template-columns: 1fr; gap: 16px; }
   .exp-item { grid-template-columns: 1fr; gap: 8px; }
   .contact-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-bar { flex-direction: column; gap: 8px; text-align: center; }
@@ -140,14 +117,14 @@ section { padding: 80px 40px; }
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Vishnu C</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact" class="nav-cta">Get in touch</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-grid">
     <div>
@@ -155,7 +132,7 @@ section { padding: 80px 40px; }
       <h1>Vishnu C<br/><em>Product &amp;</em><br/><span>Business Analyst</span></h1>
       <p class="hero-sub">Engineer turned analyst. I turn messy business problems into clear data-backed decisions. 2 years at Tata Elxsi. Currently transitioning into product-first companies.</p>
       <div class="hero-actions">
-        <a href="case-studies.html" class="btn-primary">View case studies →</a>
+        <a href="#work" class="btn-primary">View case studies →</a>
         <a href="#contact" class="btn-secondary">Get in touch</a>
       </div>
     </div>
@@ -171,7 +148,6 @@ section { padding: 80px 40px; }
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">About me</span></div>
@@ -218,7 +194,56 @@ section { padding: 80px 40px; }
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Case Studies</span></div>
+    <div class="work-grid">
+
+      <a href="case-studies/swiggy.html" class="case-card featured">
+        <div>
+          <div class="card-tag">Featured · Consumer App · Growth · 2025</div>
+          <div class="card-title">Why Swiggy's food users never try Instamart</div>
+          <p class="card-desc">65% of Swiggy users use only one service. I diagnosed why food users are not crossing over to Instamart and designed three testable interventions — time-based surfacing, cook-it-yourself mode, and checkout add-on.</p>
+          <div class="card-pills">
+            <span class="card-pill">Cross-vertical adoption</span>
+            <span class="card-pill">Funnel analysis</span>
+            <span class="card-pill">A/B testing</span>
+            <span class="card-pill">North Star metric</span>
+            <span class="card-pill">Guardrail metrics</span>
+          </div>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="case-studies/ultraviolette.html" class="case-card">
+        <div>
+          <div class="card-tag">Independent · EV · Market Analysis · 2024</div>
+          <div class="card-title">Ultraviolette EV expansion analysis</div>
+          <p class="card-desc">Structured product and market analysis evaluating Ultraviolette's potential expansion into the electric car segment — user needs, competitive landscape, brand positioning, and success metrics.</p>
+          <div class="card-pills">
+            <span class="card-pill">Market analysis</span>
+            <span class="card-pill">Competitive landscape</span>
+            <span class="card-pill">Product strategy</span>
+            <span class="card-pill">Risk assessment</span>
+          </div>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <div class="case-card coming">
+        <div>
+          <div class="card-tag">Coming soon · Fintech</div>
+          <div class="card-title">Next case study</div>
+          <p class="card-desc">Currently researching a fintech product analytics case study. Drop me a message if you have a suggestion.</p>
+          <div class="card-pills"><span class="card-pill">In research</span></div>
+        </div>
+        <div class="card-coming-pill">Coming soon</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="section-inner">
     <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Experience & Education</span></div>
@@ -259,7 +284,6 @@ section { padding: 80px 40px; }
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Get in touch</span></div>
@@ -315,17 +339,12 @@ async function submitForm() {
   const email = document.querySelector('#contactForm [name="email"]').value.trim();
   const message = document.querySelector('#contactForm [name="message"]').value.trim();
   if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
+  btn.disabled = true; btn.textContent = 'Sending...';
   try {
     const res = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: 'YOUR_WEB3FORMS_KEY_HERE',
-        subject: 'New message from portfolio — versuse.github.io',
-        name, email, message
-      })
+      body: JSON.stringify({ access_key: 'YOUR_WEB3FORMS_KEY_HERE', subject: 'New message from portfolio — versuse.github.io', name, email, message })
     });
     const result = await res.json();
     if (result.success) {
